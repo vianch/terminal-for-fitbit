@@ -13,7 +13,7 @@ import onSettingsChange from './settings';
 // Labels
 const host = String(device.modelName)
   .split(' ')[0]
-  .toLowerCase();
+  .toLowerCase() || 'localhost';
 
 const labels = {
   'TIME': '[TIME]',
@@ -29,14 +29,15 @@ Object.keys(labels).forEach((id) => {
   elem.text = labels[id];
 });
 
-// Username
+// Username and localhost
 const topLabel = createFontFit('TOP');
 const bottomLabel = createFontFit('BOTTOM');
 function updateUsername(settings) {
-  const username = settings && settings.username && settings.username.name || 'user';
-  const command = `${username}@${host}:~ $`;
+  const username = settings && settings.username && settings.username.name || 'vic';
+  const localhost = settings && settings.localhost && settings.localhost.name || 'local';
+  const command = `${username}@${localhost}:~ $`;
 
-  topLabel.text = `${command} now`;
+  topLabel.text = `${command} run`;
   bottomLabel.text = command;
 }
 updateUsername();

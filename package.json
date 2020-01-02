@@ -1,6 +1,6 @@
 {
   "fitbit": {
-    "appUUID": "df5cd9de-2135-4a94-a31a-7bd7d1e83c81",
+    "appUUID": "86244da0-ccc0-4e41-b188-7c90acb02312",
     "appType": "clockface",
     "appDisplayName": "terminal",
     "iconFile": "resources/icon.png",
@@ -12,7 +12,8 @@
     ],
     "buildTargets": [
       "higgs",
-      "meson"
+      "meson",
+      "mira"
     ],
     "i18n": {
       "en": {
@@ -21,15 +22,17 @@
     }
   },
   "devDependencies": {
-    "@fitbit/sdk": "^3.1.2"
+    "@fitbit/sdk": "^4.1.0"
   },
   "dependencies": {
-    "@fitbit/sdk-cli": "^1.6.3",
+    "@fitbit/sdk-cli": "^1.7.1",
     "fitfont": "^1.2.5",
     "string.prototype.repeat": "^0.2.0"
   },
   "scripts": {
     "build": "fitbit-build",
+    "build:id": "fitbit-build generate-appid",
+    "log": "fitbit",
     "font:generate": "npx fitfont-generate SourcecodePro-Medium.ttf 22 '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ @$:~%#.,-+?[]'"
   },
   "name": "terminal",
